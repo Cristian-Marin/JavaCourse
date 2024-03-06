@@ -3,6 +3,7 @@ conditionals\CompareNumbers.class
 loops\PrintAsterisks.class
 fundamentals\SeasonYear.class
 conditionals\DollarGameChange.class
+loops\RollDieGame.class
 loops\AddUpNumbers.class
 conditionals\MotorTypePump.class
 loops\ValidateGrades.class
