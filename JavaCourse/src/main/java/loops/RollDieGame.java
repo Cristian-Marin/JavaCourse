@@ -16,34 +16,41 @@ package loops;
  *
  * If they are greater than or less than 20 spaces exactly, they lose.
  */
-
+import java.io.IOException;
 import java.util.Random;
 
 public class RollDieGame {
 
     public static void main(String[] args) {
-        int spaces = 20;
+        int lastSpace = 20;
         int currentSpace = 0;
         int spacesLeft;
 
         System.out.println("Welcome to Roll the Die Game!");
         System.out.println("The objective of this game is to travel the entire "
-                + "game board of 20 spaces within 5 die rolls.");
+                + "game board of 20 spaces within 5-die rolls.");
+        System.out.println();
 
         for (int i = 0; i < 5; i++) {
             Random random = new Random();
             int die = random.nextInt(6) + 1;
             currentSpace = currentSpace + die;
-            spacesLeft = spaces - currentSpace;
+            spacesLeft = lastSpace - currentSpace;
 
-            if (i < 4 && currentSpace < 20) {
+            System.out.println("Press Enter to roll the die.");
+            try {
+                System.in.read();
+            } catch (IOException e) {
+            }
+
+            if (i <= 4 && currentSpace == lastSpace) {
+                System.out.println("Roll #" + (i + 1) + ": You've rolled a " + die
+                        + ". You're now on space " + currentSpace + " .Congrats, you win!");
+            } else if (i < 4 && currentSpace < lastSpace) {
                 System.out.println("Roll #" + (i + 1) + ": You've rolled a " + die
                         + ". You're now on space " + currentSpace + " and have "
                         + spacesLeft + " left to go.");
-            } else if (i <= 4 && currentSpace == 20) {
-                System.out.println("Roll #" + (i + 1) + ": You've rolled a " + die
-                        + ". You're now on space " + currentSpace + " .Congrats, you win!");
-            } else if (i == 4 && currentSpace < 20) {
+            } else if (i == 4 && currentSpace < lastSpace) {
                 System.out.println("Roll #" + (i + 1) + ": You've rolled a " + die
                         + ". You're now on space " + currentSpace
                         + ". Oops, you lose! You didn't reach space 20.");
@@ -52,6 +59,7 @@ public class RollDieGame {
                         + ". Oops, you lose! You went over space 20.");
                 break;
             }
+            System.out.println();
         }
     }
 }
