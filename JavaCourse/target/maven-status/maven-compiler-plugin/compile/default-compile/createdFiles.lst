@@ -5,6 +5,7 @@ fundamentals\SeasonYear.class
 conditionals\DollarGameChange.class
 loops\RollDieGame.class
 loops\AddUpNumbers.class
+methods\changeVowelsToSymbols.class
 conditionals\MotorTypePump.class
 loops\ValidateGrades.class
 cmd\javacourse\JavaCourse.class
