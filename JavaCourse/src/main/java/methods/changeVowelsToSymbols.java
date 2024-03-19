@@ -16,28 +16,30 @@ public class changeVowelsToSymbols {
         System.out.println("Please enter the word or phrase you want to code.");
         Scanner scanner = new Scanner(System.in);
         String phrase = scanner.next();
-codePhrase(phrase);
-    }
 
-    public static String codePhrase(String phrase) {
-        
-      for(int i=0; i==phraseLength; i++){
-          
-      }
-        
-        String vowel = null;
-        switch (vowel){
-            case "a":
-                vowel = "@";
-            case "e":
-                vowel = "#";
-            case "i":
-                vowel = "$";
-            case "o":
-                vowel = "%";
-            case "u":
-                vowel = "*";
-                }
-        return null;
+        String letter;
+        int phraseLength = phrase.length();
+
+        for (int i = 0; i < phraseLength; i++) {
+            letter = String.valueOf(phrase.charAt(i));
+            switch (letter) {
+                case "a":
+                    letter = "@";
+                    break;
+                case "e":
+                    letter = "#";
+                    break;
+                case "i":
+                    letter = "$";
+                    break;
+                case "o":
+                    letter = "%";
+                    break;
+                case "u":
+                    letter = "*";
+                    break;
+            }
+            System.out.print(letter);
         }
     }
+}
