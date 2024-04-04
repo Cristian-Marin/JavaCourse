@@ -9,19 +9,30 @@ import java.util.Scanner;
  * of the characters remain unchanged. Make a subroutine that receives the
  * sequence of characters and returns the corresponding coding.
  */
-public class changeVowelsToSymbols {
+public class ChangeVowelsToSymbols {
 
     public static void main(String[] args) {
 
-        System.out.println("Please enter the word or phrase you want to code.");
+        String dot;
+        String phrase;
         Scanner scanner = new Scanner(System.in);
-        String phrase = scanner.next();
 
-        String letter;
+        do {
+            System.out.println("Please enter a phrase you want to code, and add a period at the end.");
+            phrase = scanner.nextLine();
+            dot = String.valueOf(phrase.charAt(phrase.length() - 1));
+        } while (!dot.equals("."));
+
+        codedPhrase(phrase);
+    }
+
+    public static void codedPhrase(String phrase) {
+
         int phraseLength = phrase.length();
+        String letter;
 
         for (int i = 0; i < phraseLength; i++) {
-            letter = String.valueOf(phrase.charAt(i));
+            letter = String.valueOf(phrase.charAt(i)).toLowerCase();
             switch (letter) {
                 case "a":
                     letter = "@";
